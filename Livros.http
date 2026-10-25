@@ -1,0 +1,16 @@
+GET http://localhost:8080/livros
+
+### Cadastrar um livro
+POST http://localhost:8080/livros
+Content-Type: application/json
+Accept: application/json
+
+{
+  "titulo": "Effective Java",
+  "autor": "Joshua Bloch",
+  "isbn": "9780134685991"
+}
+
+### Buscar o livro recém-criado
+GET http://localhost:8080/livros/2
+Accept: application/json

@@ -36,3 +36,15 @@ build/
 frontend/node_modules/
 frontend/dist/
 frontend/.angular/
+
+### Configurações locais ###
+.env
+.env.*
+!.env.example
+
+### Angular / Node.js - arquivos locais ###
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+frontend/coverage/
+frontend/.sass-cache/

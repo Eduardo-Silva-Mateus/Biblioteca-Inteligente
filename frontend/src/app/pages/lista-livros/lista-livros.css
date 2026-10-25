@@ -1,0 +1,161 @@
+/* Estilo geral da página */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.cabecalho-listagem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.btn-cadastrar {
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-cadastrar:hover {
+  background-color: #146c43;
+}
+
+h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
+/* Tabela de livros */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+/* Cabeçalho e células */
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+/* Cabeçalho */
+th {
+  background-color: #f2f2f2;
+}
+
+/* Linhas alternadas */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Destaque ao passar o mouse */
+tbody tr:hover {
+  background-color: #eaf2f8;
+}
+
+.acoes {
+  white-space: nowrap;
+}
+
+.acoes button {
+  margin-right: 6px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.acoes button:last-child {
+  margin-right: 0;
+}
+
+
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-conteudo {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-sizing: border-box;
+}
+
+.modal-conteudo h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 24px;
+}
+
+.modal-conteudo label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #374151;
+  font-weight: 600;
+}
+
+.modal-conteudo input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.modal-conteudo input:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+  border-color: #2563eb;
+}
+
+.modal-conteudo button {
+  padding: 11px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.modal-conteudo button:first-of-type {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.modal-conteudo button:last-of-type {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.modal-conteudo button:hover {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 480px) {
+  .modal-conteudo {
+    padding: 20px;
+  }
+}
