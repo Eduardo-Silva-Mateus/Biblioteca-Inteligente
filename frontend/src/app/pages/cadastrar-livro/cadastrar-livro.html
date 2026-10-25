@@ -1,0 +1,52 @@
+
+<div class="pagina-cadastro">
+  <h1>Biblioteca Inteligente</h1>
+
+  <section class="card-cadastro">
+    <button type="button" class="botao-voltar" routerLink="/">
+      ← Voltar para a lista
+    </button>
+    <h2>Cadastrar Novo Livro</h2>
+
+    @if (mensagemSucesso) {
+      <p class="mensagem-sucesso">{{ mensagemSucesso }}</p>
+    }
+
+    <form #formulario="ngForm" (ngSubmit)="cadastrar()">
+      <div class="campo-formulario">
+        <label for="titulo">Título:</label>
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          [(ngModel)]="novoLivro.titulo"
+          required
+        >
+      </div>
+
+      <div class="campo-formulario">
+        <label for="autor">Autor:</label>
+        <input
+          type="text"
+          id="autor"
+          name="autor"
+          [(ngModel)]="novoLivro.autor"
+          required
+        >
+      </div>
+
+      <div class="campo-formulario">
+        <label for="isbn">ISBN:</label>
+        <input
+          type="text"
+          id="isbn"
+          name="isbn"
+          [(ngModel)]="novoLivro.isbn"
+          required
+        >
+      </div>
+
+      <button type="submit">Cadastrar Livro</button>
+    </form>
+  </section>
+</div>

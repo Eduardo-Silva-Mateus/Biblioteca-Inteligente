@@ -1,0 +1,98 @@
+<h1>Biblioteca Inteligente</h1>
+
+<div class="cabecalho-listagem">
+  <h2>Livros Cadastrados</h2>
+  <button type="button" class="btn-cadastrar" routerLink="/livros/cadastrar-livro">
+    Cadastrar novo livro
+  </button>
+</div>
+<div>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>ISBN</th>
+      <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for(livro of livros(); track livro.id){
+        <tr>
+          <td>{{livro.id}}</td>
+          <td>{{livro.titulo}}</td>
+          <td>{{livro.autor}}</td>
+          <td>{{livro.isbn}}</td>
+          <td class="acoes">
+            <button type="button"
+                    (click)="buscarLivroId(livro.id)"
+            >Buscar</button>
+            <button type="button"
+                    (click)="editarLivro(livro.id)"
+            >Atualizar</button>
+            <button type="button"
+                    (click)="excluirLivro(livro.id)"
+            >Excluir</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  @if (livroEncontrado(); as livro) {
+    <div class="modal-fundo">
+      <section class="modal-conteudo">
+        <h2>Livro encontrado</h2>
+
+        <p><strong>ID:</strong> {{ livro.id }}</p>
+        <p><strong>Título:</strong> {{ livro.titulo }}</p>
+        <p><strong>Autor:</strong> {{ livro.autor }}</p>
+        <p><strong>ISBN:</strong> {{ livro.isbn }}</p>
+
+        <button type="button" (click)="livroEncontrado.set(null)">
+          Fechar
+        </button>
+      </section>
+    </div>
+  }
+
+  @if (livroEmEdicao(); as livro){
+    <div class="modal-fundo">
+      <section class="modal-conteudo">
+        <h2>Editar Livro</h2>
+        <label>
+          Título:
+          <input
+            type="text"
+            [(ngModel)]="livro.titulo"
+            required
+          />
+        </label>
+
+        <label>
+          Autor:
+          <input
+            type="text"
+            [(ngModel)]="livro.autor"
+            required
+          />
+        </label>
+
+        <label>
+          ISBN:
+          <input
+            type="text"
+            [(ngModel)]="livro.isbn"
+            required
+          />
+        </label>
+        <button type="button" (click)="salvarEdicao()">
+          Salvar alterações
+        </button>
+        <button type="button" (click)="fecharEdicao()">
+          Fechar
+        </button>
+      </section>
+    </div>
+  }
+</div>
