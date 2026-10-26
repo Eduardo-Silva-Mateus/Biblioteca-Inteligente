@@ -145,6 +145,12 @@ A Biblioteca Inteligente foi desenvolvida como projeto de portfólio para consol
 
 O projeto faz parte da minha evolução como desenvolvedor, com foco em boas práticas de programação, organização do código e construção de aplicações web.
 
+## 📸 Demonstração
+
+### Listagem de livros
+
+![Tela de listagem de livros](screenshots/lista-livros.png)
+
 ## Autor
 
 **Eduardo Mateus da Silva**
